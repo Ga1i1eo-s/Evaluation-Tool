@@ -159,6 +159,42 @@ npm run build
 npm run preview
 ```
 
+## Deployment
+
+### Backend Deployment on Render
+
+1. Push your code to GitHub
+2. Go to [render.com](https://render.com) and sign up
+3. Click "New +" → "Web Service"
+4. Connect your GitHub repository
+5. Render will detect the `render.yaml` file in the backend folder
+6. Configure environment variables:
+   - `GROQ_API_KEY`: Your Groq API key
+   - `PORT`: 3001 (already set in render.yaml)
+7. Click "Deploy Web Service"
+
+The backend will be deployed and you'll get a URL like `https://clarity-backend.onrender.com`
+
+### Frontend Deployment on Netlify/Vercel
+
+1. Build the frontend:
+```bash
+cd frontend
+npm run build
+```
+
+2. Deploy the `dist` folder to Netlify or Vercel
+3. Update the frontend environment variable `VITE_API_URL` to point to your Render backend URL
+
+### Environment Variables for Production
+
+**Backend (Render):**
+- `GROQ_API_KEY`: Your Groq API key
+- `PORT`: 3001
+
+**Frontend (Netlify/Vercel):**
+- `VITE_API_URL`: Your Render backend URL (e.g., `https://clarity-backend.onrender.com`)
+
 ## Important Notes
 
 1. The main AI response and the evaluation are TWO SEPARATE API calls

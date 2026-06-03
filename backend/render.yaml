@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: clarity-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 3001
+    plan: free
