@@ -175,16 +175,17 @@ npm run preview
 
 The backend will be deployed and you'll get a URL like `https://clarity-backend.onrender.com`
 
-### Frontend Deployment on Netlify/Vercel
+### Frontend Deployment on Netlify
 
-1. Build the frontend:
-```bash
-cd frontend
-npm run build
-```
+1. Go to [netlify.com](https://netlify.com) and sign up/login
+2. Click "Add new site" → "Import an existing project"
+3. Connect your GitHub repository
+4. Netlify will detect the `netlify.toml` file in the frontend folder
+5. Configure environment variables:
+   - `VITE_API_URL`: Your Render backend URL (e.g., `https://clarity-backend.onrender.com`)
+6. Click "Deploy site"
 
-2. Deploy the `dist` folder to Netlify or Vercel
-3. Update the frontend environment variable `VITE_API_URL` to point to your Render backend URL
+The frontend will be deployed and you'll get a URL like `https://clarity-frontend.netlify.app`
 
 ### Environment Variables for Production
 
